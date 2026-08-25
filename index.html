@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What Watch Are You?</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="A cheerful personality-based watch recommendation quiz." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="sun-glow" aria-hidden="true"></div>
+
+  <button class="catalogue-tab" id="catalogueToggle" type="button" aria-label="Open watch catalogue">
+    <span class="cat-doodle" aria-hidden="true">
+      <span class="cat-ear left"></span>
+      <span class="cat-ear right"></span>
+      <span class="cat-head"><i></i><i></i><b></b><em></em></span>
+      <span class="cat-tail"></span>
+    </span>
+    <!--span class="dog-ear">pull me ✦</span!-->
+  </button>
+
+  <aside class="catalogue-panel" id="cataloguePanel" hidden aria-label="Watch catalogue">
+    <div class="catalogue-sheet">
+      <header class="catalogue-header">
+        <div>
+          <div class="eyebrow">THE LITTLE WATCH CUPBOARD</div>
+          <h2>50 watches, 6 personalities.</h2>
+          <p>Hover a card to reveal its rough average price and a one-tap shopping prompt.</p>
+        </div>
+        <button class="catalogue-close" id="catalogueClose" type="button" aria-label="Close catalogue">×</button>
+      </header>
+      <div class="catalogue-tools">
+        <input id="catalogueSearch" type="search" placeholder="search the catalogue…" aria-label="Search the watch catalogue" />
+        <span>50 references ✦ real-photo references</span>
+      </div>
+      <div class="catalogue-grid" id="catalogueGrid"></div>
+    </div>
+  </aside>
+
+  <main class="app-shell">
+    <header class="masthead">
+      <div class="brand-mark" aria-label="What Watch Are You?"><span>WHAT</span><strong>WATCH</strong><span>ARE YOU?</span></div>
+      <div class="header-note">a tiny horological personality machine ✦</div>
+    </header>
+
+    <section class="hero" id="quizView">
+      <div class="hero-copy">
+        <p class="eyebrow">PERSONALITY × TIME × A LITTLE NONSENSE</p>
+        <h1>Find the watch<br><em>that feels like you.</em></h1>
+        <p class="lede">Answer twelve slightly peculiar questions. Somewhere backstage, a tiny imaginary neural network will dramatically overthink your answers.</p>
+        <div class="hero-stickers" aria-hidden="true">
+          <span>✳ curious</span><span>☼ outdoorsy</span><span>⌁ precise</span><span>♡ sentimental</span>
+        </div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="progress-row">
+          <div class="progress-label"><span id="questionNumber">01</span> / 12</div>
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+
+        <div class="question-stage" id="questionStage">
+          <div class="question-kicker" id="questionKicker">FIRST IMPRESSIONS</div>
+          <h2 id="questionText">Loading your first strange question…</h2>
+          <div class="answers" id="answers"></div>
+        </div>
+
+        <div class="micro-copy" id="microCopy">No bad answers. Only increasingly accurate wrists.</div>
+      </div>
+    </section>
+
+    <section class="network-corner" aria-label="Fake neural network progress">
+      <div class="network-title">imaginary brain<br><span>working very hard</span></div>
+      <svg id="networkSvg" viewBox="0 0 240 155" role="img" aria-label="Animated fake neural network">
+        <g class="links" id="networkLinks"></g>
+        <g class="nodes" id="networkNodes"></g>
+      </svg>
+      <div class="network-caption" id="networkCaption">waiting for data…</div>
+    </section>
+
+    <section class="results" id="resultsView" hidden>
+      <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+        <span>scroll</span>
+        <b>↓</b>
+      </div>
+      <div class="results-topline">THE MACHINE HAS SPOKEN ✦</div>
+      <h2 id="resultTitle">You have watch energy.</h2>
+      <p id="resultIntro"></p>
+      <div class="recommendations" id="recommendations"></div>
+
+      <section class="shopping-prompts">
+        <div class="results-topline">YOUR FINAL CHEAT SHEET ✦</div>
+        <h3>Copy a search prompt and take it shopping.</h3>
+        <p>These are intentionally broad, natural-language prompts. Paste them into Amazon, Google, Chrono24, a retailer search box, or anywhere else you shop.</p>
+        <div id="promptList" class="prompt-list"></div>
+        <div id="copyStatus" class="copy-status" aria-live="polite"></div>
+      </section>
+
+      <button class="restart" id="restartButton">↺ do it again</button>
+    </section>
+
+    <footer>
+    <span>
+      Made With Love by
+      <a
+        href="https://www.linkedin.com/in/sarvesh-moharil-1a0b0b426/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="creator-link"
+      >
+        Sarvesh Moharil
+      </a>
+    </span>
+  </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
